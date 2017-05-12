@@ -24,7 +24,7 @@ ENV PATH=$MAVEN_HOME/bin:$PATH
 
 RUN mkdir /var/tmp/webapp
 ADD ./ /var/tmp/webapp
-#RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var/tmp/tomcat/apache-tomcat-8.5.15/webapps
+RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var/tmp/tomcat/apache-tomcat-8.5.15/webapps
 
 EXPOSE 8080
 
