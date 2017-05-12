@@ -3,7 +3,7 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 
 #安装JDK
 RUN yum update
-RUN yum install -y java-1.6.0-openjdk.x86_64 && yum install -y wget
+RUN yum install -y java-1.8.0-openjdk.x86_64 && yum install -y wget
 
 #安装tomcat
 RUN mkdir -p /var/tmp/tomcat
