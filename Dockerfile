@@ -4,8 +4,6 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 #安装JDK
 RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get update
-RUN apt-get install -y oracle-java8-installer
-RUN apt-get install -y oracle-java8-set-default
 RUN apt-get install -y wget
 
 
