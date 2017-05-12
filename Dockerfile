@@ -1,9 +1,9 @@
-FROM centos:latest
+FROM ubuntu:latest
 MAINTAINER Silva Song "silva.song@aliyun.com"
 
 #安装JDK
-RUN yum update
-RUN yum install -y java-1.8.0-openjdk.x86_64 && yum install -y wget
+RUN apt-get update
+RUN apt-get install -y openjdk-7-jdk && apt-get install -y wget
 
 #安装tomcat
 RUN mkdir -p /var/tmp/tomcat
@@ -19,8 +19,6 @@ RUN rm -rf /var/tmp/maven/apache-maven-3.5.0-bin.tar.gz
 #设置maven环境变量
 ENV MAVEN_HOME=/var/tmp/maven/apache-maven-3.5.0
 ENV PATH=$MAVEN_HOME/bin:$PATH
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-2.b11.el7_3.x86_64/bin
-
 
 
 RUN mkdir /var/tmp/webapp
@@ -30,4 +28,3 @@ RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var
 EXPOSE 8080
 
 CMD ["./var/tmp/tomcat/apache-tomcat-8.5.15/bin/catalina.sh","run"]
-
