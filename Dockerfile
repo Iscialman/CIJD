@@ -1,12 +1,12 @@
-FROM ubuntu:latest
+FROM centos:latest
 MAINTAINER Silva Song "silva.song@aliyun.com"
 
 #安装JDK
-RUN apt-get update
-RUN apt-get install -y openjdk && apt-get install -y wget
+RUN yum update
+RUN yum install -y openjdk && yum install -y wget
 
 #安装tomcat
-RUN mkdir /var/tmp/tomcat
+RUN mkdir -p /var/tmp/tomcat
 RUN wget -P /var/tmp/tomcat http://mirrors.noc.im/apache/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz
 RUN tar xzf /var/tmp/tomcat/apache-tomcat-8.0.33.tar.gz -C /var/tmp/tomcat
 RUN rm -rf /var/tmp/tomcat/apache-tomcat-8.0.33.tar.gz 
