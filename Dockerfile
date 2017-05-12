@@ -19,7 +19,7 @@ RUN rm -rf /var/tmp/maven/apache-maven-3.5.0-bin.tar.gz
 #设置maven环境变量
 ENV MAVEN_HOME=/var/tmp/maven/apache-maven-3.5.0
 ENV PATH=$MAVEN_HOME/bin:$PATH
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.121-0.b13.el7_3.x86_64
+ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-2.b11.el7_3.x86_64
 
 
 
