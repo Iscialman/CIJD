@@ -2,7 +2,6 @@ FROM ubuntu:latest
 MAINTAINER Silva Song "silva.song@aliyun.com"
 
 #安装JDK
-RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get update
 RUN apt-get install -y wget
 
